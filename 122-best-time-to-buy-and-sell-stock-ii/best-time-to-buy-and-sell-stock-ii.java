@@ -3,9 +3,9 @@ class Solution {
         int n = prices.length;
         int netpro = 0;
         for(int i =0; i<n-1; i++){
-            if(prices[i] < prices[i+1]) {
+            if(prices[i] < prices[i+1]){
                 int diff = prices[i+1] - prices[i];
-                netpro = netpro + diff; 
+                netpro = netpro + diff ;
             }
         }
         return netpro;
