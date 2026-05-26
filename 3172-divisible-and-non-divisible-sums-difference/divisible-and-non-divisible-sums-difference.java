@@ -1,15 +1,16 @@
 class Solution {
     public int differenceOfSums(int n, int m) {
-        int nd = 0;
-        int d = 0;
-        for(int i=1; i<=n; i++){
-            if(i%m ==0){
-                d= d+i;
+       int num1 = 0;
+       int num2 = 0;
+
+       for(int i = 0; i<=n; i++){
+        if(i % m == 0){
+            num2 += i; 
         }
-          else{
-                nd = nd + i;
-                }
-            }
-            return nd-d;
+        else{
+            num1 += i;
+        }
+       } 
+       return num1 - num2;
     }
 }
