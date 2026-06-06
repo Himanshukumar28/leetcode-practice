@@ -3,26 +3,12 @@ class Solution {
         if(n<=0){
             return false;
         }
-        while(n !=1){
+        while(n > 1){
             if(n%3 == 0){
                 n = n/3;
             }
-            else{
-                return false;
-            }
+            else return false;
         }
-        return true;
-
-        //OR 
-        if(n<=0){
-            return false;
-        }
-         while(n>=1){
-             if(n%3 !=0){
-                 return false;
-             }
-             n = n/3;
-         }
         return true;
     }
 }
