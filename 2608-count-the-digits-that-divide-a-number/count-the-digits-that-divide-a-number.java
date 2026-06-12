@@ -1,9 +1,9 @@
 class Solution {
     public int countDigits(int num) {
-        int count = 0; 
+        int count = 0;
         for(int dummy = num; dummy>0; dummy /= 10){
-            int digit = dummy % 10;
-            if(num % digit == 0){
+            int val = dummy % 10;
+            if(num % val == 0){
                 count++;
             }
         }
