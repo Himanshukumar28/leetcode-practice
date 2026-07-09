@@ -7,12 +7,11 @@ class Solution {
         }
         return s;
     }
+    
     public int smallestIndex(int[] nums) {
         int n = nums.length;
-        int sum = 0;
         for(int i = 0; i<n; i++){
-            int x = nums[i];
-            if(sum(x) == i){
+            if(sum (nums[i]) == i){
                 return i;
             }
         }
