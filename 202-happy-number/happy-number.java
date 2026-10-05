@@ -1,16 +1,26 @@
 class Solution {
-    public boolean isHappy(int n){
-        if(n == 1 || n == 7) return true;
-        if(n < 10) return false;
-        else{
-            int sum = 0;
-            while(n != 0){
-                int rem = n % 10;
-                sum = sum + rem* rem;
-                n = n/10;
-            }
-            return isHappy(sum);
+    public int sumofdigit(int n){
+        int sum = 0;
+        while(n != 0){
+            int digits = n % 10;
+            n = n /10;
+            sum = sum + (digits * digits);
         }
+        return sum;
     }
-    
+    public boolean isHappy(int n) {
+        Set<Integer> set = new HashSet<>();
+
+        while(n != 1){
+            if(set.contains(n)){
+            return false;
+            }
+            set.add(n);
+
+            n = sumofdigit(n);
+        } 
+        return true;
+    }
 }
+//T.C- 0(log n);
+//S.C- 0(log n);
