@@ -1,26 +1,26 @@
 class Solution {
-    public int sumofdigit(int n){
+    public int sumofsquersofdigit(int n){
         int sum = 0;
         while(n != 0){
-            int digits = n % 10;
+            int digits = n %10;
             n = n /10;
             sum = sum + (digits * digits);
         }
         return sum;
     }
     public boolean isHappy(int n) {
-        Set<Integer> set = new HashSet<>();
+        //floyd cycle detection algo
+        int slow = n;
+        int fast = n;
 
-        while(n != 1){
-            if(set.contains(n)){
-            return false;
-            }
-            set.add(n);
+        while(true){
+            slow = sumofsquersofdigit(slow);
+            fast = sumofsquersofdigit(sumofsquersofdigit(fast));
 
-            n = sumofdigit(n);
-        } 
-        return true;
+            if(fast == 1) return true;
+            if(slow == fast) return false;
+        }
     }
 }
 //T.C- 0(log n);
-//S.C- 0(log n);
+//S.C- 0(1);
