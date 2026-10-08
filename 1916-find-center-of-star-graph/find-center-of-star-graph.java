@@ -1,6 +1,5 @@
 class Solution {
     public int findCenter(int[][] edges) {
-        //BRUTE FORCE
         Set<Integer> set = new HashSet<>();
         int row = edges.length;
         int col = 2;
